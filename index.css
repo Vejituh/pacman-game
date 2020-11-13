@@ -12,13 +12,12 @@ html,body {
     height: 420px;
     border: solid black;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
 }
 
 .grid div {
     width: 15px;
     height: 15px;
-    background-color: blue;
 }
 
 .pac-dot {
@@ -31,7 +30,7 @@ html,body {
     background-color: blue;
 }
 
-.power-pallet {
+.power-pellet {
     background-color: green;
     border-radius: 7.5px;
 }
@@ -51,6 +50,18 @@ html,body {
         width: 22.5px;
         height: 22.5px;
     }
+
+    .pac-dot {
+        border: 7.5px solid white;
+    }
+
+    .power-pellet {
+        border-radius: 11.25px;
+    }
+
+    .pacman {
+        border-radius: 11.25px;
+    }
 }
 
 @media (min-width: 1024px) and (min-height: 768px) {
@@ -63,6 +74,18 @@ html,body {
         width: 33.75px;
         height: 33.75px;
     }
+
+    .pac-dot {
+        border:11.25px solid white;
+    }
+
+    .power-pellet {
+        border-radius: 16.875px;
+    }
+
+    .pacman {
+        border-radius: 16.875px;
+    }
 }
 
 @media (min-width: 2560px) and (min-height: 768px){
@@ -74,5 +97,17 @@ html,body {
     .grid div {
         width: 50.625px;
         height: 50.625px;
+    }
+
+    .pac-dot {
+        border:16.875px solid white;
+    }
+
+    .power-pellet {
+        border-radius: 25.3125px;
+    }
+
+    .pacman {
+        border-radius: 16.875px;
     }
 }
