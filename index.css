@@ -13,101 +13,130 @@ html,body {
     border: solid black;
     display: flex;
     flex-flow: row wrap;
+    background-color: #000000;
 }
 
-.grid div {
+.square {
     width: 15px;
     height: 15px;
 }
 
 .pac-dot {
-    background-color: green;
-    border: 5px solid white;
+    background-color: #FEBB98;
+    border: 5px solid #000000;
     box-sizing: border-box;
 }
 
 .wall {
-    background-color: blue;
+    background-color: #0302F7;
 }
 
-.power-pellet {
-    background-color: green;
-    border-radius: 7.5px;
+#power-pellet {
+    background-color: #FEBB98;
+    border-radius: 6px;
+    width: 12px;
+    height: 12px;
+    margin: 1.5px;
 }
 
-.pacman {
-    background-color: yellow;
-    border-radius: 7.5px;
+#pacman {
+    background-color: #FEF200;
+    border-radius: 6px;
+    width: 12px;
+    height: 12px;
+    margin: 1.5px;
+    border: none;
 }
 
-@media (min-width: 768px) and (min-height: 768px) {
+@media (min-width: 768px) and (min-height: 1122px) {
     .grid {
         width: 630px;
         height: 630px;
     }
 
-    .grid div {
+    .square {
         width: 22.5px;
         height: 22.5px;
     }
 
     .pac-dot {
-        border: 7.5px solid white;
+        border: 7.5px solid #000000;
     }
 
-    .power-pellet {
-        border-radius: 11.25px;
+    #power-pellet {
+        border-radius: 9px;
+        width: 18px;
+        height: 18px;
+        margin: 2.25px;
     }
 
-    .pacman {
-        border-radius: 11.25px;
+    #pacman {
+        border-radius: 9px;
+        width: 18px;
+        height: 18px;
+        margin: 2.25px;
+        border: none;
     }
 }
 
-@media (min-width: 1024px) and (min-height: 768px) {
+@media (min-width: 1024px) and (min-height: 1122px) {
     .grid {
         width: 945px;
         height: 945px;
     }
 
-    .grid div {
+    .square {
         width: 33.75px;
         height: 33.75px;
     }
 
     .pac-dot {
-        border:11.25px solid white;
+        border:11.25px solid #000000;
     }
 
-    .power-pellet {
-        border-radius: 16.875px;
+    #power-pellet {
+        border-radius: 13.5px;
+        width: 27px;
+        height: 27px;
+        margin: 3.375px;
     }
 
-    .pacman {
-        border-radius: 16.875px;
+    #pacman {
+        border-radius: 13.5px;
+        width: 27px;
+        height: 27px;
+        margin: 3.375px;
+        border: none;
     }
 }
 
-@media (min-width: 2560px) and (min-height: 768px){
+@media (min-width: 2560px) and (min-height: 1122px){
     .grid {
         width: 1417.5px;
         height: 1417.5px;
     }
 
-    .grid div {
+    .square {
         width: 50.625px;
         height: 50.625px;
     }
 
     .pac-dot {
-        border:16.875px solid white;
+        border:16.875px solid #000000;
     }
 
-    .power-pellet {
-        border-radius: 25.3125px;
+    #power-pellet {
+        border-radius: 20.25px;
+        width: 40.5px;
+        height: 40.5px;
+        margin: 5.0625px;
     }
 
-    .pacman {
-        border-radius: 16.875px;
+    #pacman {
+        border-radius: 20.25px;
+        width: 40.5px;
+        height: 40.5px;
+        margin: 5.0625px;
+        border: none;
     }
 }
