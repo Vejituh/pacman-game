@@ -38,7 +38,7 @@ const layout = [
     1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,
     1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
-    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 
+    1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 ]
 
 //Create Board
@@ -47,7 +47,14 @@ function createBoard() {
         let gridDiv = document.createElement('div')
         grid.appendChild(gridDiv);
         gridDivs.push(gridDiv);
+
+        if (layout[i] === 0) {
+            gridDivs[i].classList.add('pac-dot');
+        } else if (layout[i] === 1) {
+            gridDivs[i].classList.add('wall');
+        } else if (layout[i] === 3) {
+            gridDivs[i].classList.add('power-pellet');
+        }
     }
 }
-
 createBoard();
