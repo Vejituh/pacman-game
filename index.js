@@ -45,6 +45,7 @@ const layout = [
 function createBoard() {
     for (let i = 0; i < layout.length; i++) {
         let gridDiv = document.createElement('div')
+        gridDiv.classList.add('square')
         grid.appendChild(gridDiv);
         gridDivs.push(gridDiv);
 
@@ -53,8 +54,36 @@ function createBoard() {
         } else if (layout[i] === 1) {
             gridDivs[i].classList.add('wall');
         } else if (layout[i] === 3) {
-            gridDivs[i].classList.add('power-pellet');
+            gridDivs[i].id = 'power-pellet';
         }
     }
 }
 createBoard();
+
+//starting posision of pacman
+let pacmanCurrentIndex = 490;
+gridDivs[pacmanCurrentIndex].id = 'pacman';
+
+//movement control
+function control(e) {
+    if (e.defaultPrevented) {
+        return;
+    }
+
+    switch(e.code) {
+        case 'ArrowDown':
+            console.log('down');
+            break;
+        case 'ArrowUp':
+            console.log('up');
+            break;
+        case 'ArrowLeft':
+            console.log('left');
+            break;
+        case 'ArrowRight':
+            console.log('right');
+            break;
+    }
+    e.preventDefault();
+}
+document.addEventListener('keydown', control);
