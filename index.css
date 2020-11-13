@@ -1,0 +1,58 @@
+html,body {
+    margin: 0.25em;
+    padding: 0.25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    width: 420px;
+    height: 420px;
+    border: solid black;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.grid div {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+}
+
+@media (min-width: 768px) and (min-height: 768px) {
+    .grid {
+        width: 630px;
+        height: 630px;
+    }
+
+    .grid div {
+        width: 22.5px;
+        height: 22.5px;
+    }
+}
+
+@media (min-width: 1024px) and (min-height: 768px) {
+    .grid {
+        width: 945px;
+        height: 945px;
+    }
+
+    .grid div {
+        width: 33.75px;
+        height: 33.75px;
+    }
+}
+
+@media (min-width: 2560px) and (min-height: 768px){
+    .grid {
+        width: 1417.5px;
+        height: 1417.5px;
+    }
+
+    .grid div {
+        width: 50.625px;
+        height: 50.625px;
+    }
+}
