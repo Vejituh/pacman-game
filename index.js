@@ -1,6 +1,7 @@
 const width = 28;
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.querySelector('#score');
+let gridDivs = [];
 
 //28 * 28
   // 0 - pac-dots
@@ -39,3 +40,14 @@ const layout = [
     1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
     1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1 
 ]
+
+//Create Board
+function createBoard() {
+    for (let i = 0; i < layout.length; i++) {
+        let gridDiv = document.createElement('div')
+        grid.appendChild(gridDiv);
+        gridDivs.push(gridDiv);
+    }
+}
+
+createBoard();
