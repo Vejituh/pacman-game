@@ -21,6 +21,26 @@ html,body {
     background-color: blue;
 }
 
+.pac-dot {
+    background-color: green;
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: blue;
+}
+
+.power-pallet {
+    background-color: green;
+    border-radius: 7.5px;
+}
+
+.pacman {
+    background-color: yellow;
+    border-radius: 7.5px;
+}
+
 @media (min-width: 768px) and (min-height: 768px) {
     .grid {
         width: 630px;
