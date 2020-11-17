@@ -130,12 +130,20 @@ class Ghost {
         this.className = className
         this.startIndex = startIndex
         this.speed = speed
+        this.currentIndex = startIndex
+        this.isScared = false
+        this.timerId = NaN
     }
 }
 
-ghosts = [
+const ghosts = [
     new Ghost ('blinky', 348, 250),
     new Ghost ('pinky', 376, 400),
     new Ghost ('inky', 351, 300),
     new Ghost ('clyde', 379, 500)
 ]
+
+//Draw ghost onto grid
+for(const ghost of ghosts) {
+    gridDivs[ghost.startIndex].classList.add(ghost.className);
+}
