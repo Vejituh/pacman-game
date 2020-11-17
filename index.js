@@ -116,6 +116,7 @@ function control(e) {
 }
 document.addEventListener('keydown', control);
 
+//Checking if pacman index contains a pc-dots and add score and remove class
 function pacDotEat() {
     if (gridDivs[pacmanCurrentIndex].classList.contains('pac-dot')) {
         gridDivs[pacmanCurrentIndex].classList.remove('pac-dot')
