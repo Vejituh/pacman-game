@@ -57,6 +57,7 @@ function createBoard() {
         } else if (layout[i] === 2) {
             gridDivs[i].classList.add('ghost-lair')
         } else if (layout[i] === 3) {
+            gridDivs[i].classList.add ('power-pellet');
             gridDivs[i].id = 'power-pellet';
         }
     }
@@ -113,15 +114,31 @@ function control(e) {
     e.preventDefault();
     gridDivs[pacmanCurrentIndex].id = 'pacman'
     pacDotEat()
+    powerPelletEat()
 }
 document.addEventListener('keydown', control);
 
-//Checking if pacman index contains a pc-dots and add score and remove class
+//Checking if pacman index contains a pac-dots and add score and remove class
 function pacDotEat() {
     if (gridDivs[pacmanCurrentIndex].classList.contains('pac-dot')) {
         gridDivs[pacmanCurrentIndex].classList.remove('pac-dot')
         score++
         scoreDisplay.textContent = score;
+    }
+}
+
+//check if power-pellet eat
+function powerPelletEat() {
+    if (gridDivs[pacmanCurrentIndex].classList.contains('power-pellet')) {
+        gridDivs[pacmanCurrentIndex].classList.remove('power-pellet')
+        score += 10;
+        scoreDisplay.textContent = score;
+        for(const ghost of ghosts) {
+            ghost.isScared = true;
+            setTimeout(function() {
+                ghost.isScared = false;
+            }, 10000)
+        }
     }
 }
 
