@@ -2,6 +2,7 @@ const width = 28;
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.querySelector('#score');
 let gridDivs = [];
+let score = 0;
 
 //28 * 28
   // 0 - pac-dots
@@ -111,5 +112,14 @@ function control(e) {
     }
     e.preventDefault();
     gridDivs[pacmanCurrentIndex].id = 'pacman'
+    pacDotEat()
 }
 document.addEventListener('keydown', control);
+
+function pacDotEat() {
+    if (gridDivs[pacmanCurrentIndex].classList.contains('pac-dot')) {
+        gridDivs[pacmanCurrentIndex].classList.remove('pac-dot')
+        score++
+        scoreDisplay.textContent = score;
+    }
+}
