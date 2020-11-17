@@ -73,22 +73,26 @@ function control(e) {
 
     switch(e.code) {
         case 'ArrowDown':
-            if (pacmanCurrentIndex + width < width *  width ) {
+            if (!gridDivs[pacmanCurrentIndex + width].classList.contains('wall') && 
+                pacmanCurrentIndex + width < width *  width ) {
                 pacmanCurrentIndex += width;
             }
             break;
         case 'ArrowUp':
-            if (pacmanCurrentIndex - width >= 0 ) {
+            if (!gridDivs[pacmanCurrentIndex - width].classList.contains('wall') &&
+                pacmanCurrentIndex - width >= 0 ) {
                 pacmanCurrentIndex -= width;
             }
             break;
         case 'ArrowLeft':
-            if (pacmanCurrentIndex % width !== 0) {
+            if (!gridDivs[pacmanCurrentIndex -1].classList.contains('wall') &&
+                pacmanCurrentIndex % width !== 0) {
                 pacmanCurrentIndex -= 1;
             }
             break;
         case 'ArrowRight':
-            if (pacmanCurrentIndex % width < width -1) {
+            if (!gridDivs[pacmanCurrentIndex +1].classList.contains('wall') &&
+                pacmanCurrentIndex % width < width -1) {
                 pacmanCurrentIndex += 1;
             }
             break;
