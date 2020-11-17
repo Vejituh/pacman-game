@@ -68,7 +68,7 @@ html,body {
     background-color: orange;
 }
 
-@media (min-width: 768px) and (min-height: 1122px) {
+@media (min-width: 768px) and (min-height: 812px) {
     .grid {
         width: 630px;
         height: 630px;
