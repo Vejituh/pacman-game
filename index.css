@@ -48,6 +48,26 @@ html,body {
     border: none;
 }
 
+.blinky, .pinky, .inky, .clyde {
+    border: none;
+}
+
+.blinky {
+    background-color: red;
+}
+
+.pinky {
+    background-color: pink;
+}
+
+.inky {
+    background-color: blue;
+}
+
+.clyde {
+    background-color: orange;
+}
+
 @media (min-width: 768px) and (min-height: 1122px) {
     .grid {
         width: 630px;
