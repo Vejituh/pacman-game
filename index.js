@@ -147,3 +147,19 @@ const ghosts = [
 for(const ghost of ghosts) {
     gridDivs[ghost.startIndex].classList.add(ghost.className);
 }
+
+//Move ghost
+for (const ghost of ghosts) {
+    moveGhost(ghost)
+}
+
+//function to move ghost
+function moveGhost(ghost) {
+    const directions = [-1, +1, -width, +width];
+    let direction = directions[Math.floor(Math.random() * directions.length)]
+    ghost.timerId = setInterval(function() {
+        gridDivs[ghost.currentIndex].classList.remove(ghost.className)
+        ghost.currentIndex += direction;
+        gridDivs[ghost.currentIndex].classList.add(ghost.className)
+    }, ghost.speed)
+}
