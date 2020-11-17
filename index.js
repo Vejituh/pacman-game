@@ -69,21 +69,31 @@ function control(e) {
     if (e.defaultPrevented) {
         return;
     }
+    gridDivs[pacmanCurrentIndex].id = '';
 
     switch(e.code) {
         case 'ArrowDown':
-            console.log('down');
+            if (pacmanCurrentIndex + width < width *  width ) {
+                pacmanCurrentIndex += width;
+            }
             break;
         case 'ArrowUp':
-            console.log('up');
+            if (pacmanCurrentIndex - width >= 0 ) {
+                pacmanCurrentIndex -= width;
+            }
             break;
         case 'ArrowLeft':
-            console.log('left');
+            if (pacmanCurrentIndex % width !== 0) {
+                pacmanCurrentIndex -= 1;
+            }
             break;
         case 'ArrowRight':
-            console.log('right');
+            if (pacmanCurrentIndex % width < width -1) {
+                pacmanCurrentIndex += 1;
+            }
             break;
     }
     e.preventDefault();
+    gridDivs[pacmanCurrentIndex].id = 'pacman'
 }
 document.addEventListener('keydown', control);
