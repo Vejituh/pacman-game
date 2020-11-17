@@ -53,6 +53,8 @@ function createBoard() {
             gridDivs[i].classList.add('pac-dot');
         } else if (layout[i] === 1) {
             gridDivs[i].classList.add('wall');
+        } else if (layout[i] === 2) {
+            gridDivs[i].classList.add('ghost-lair')
         } else if (layout[i] === 3) {
             gridDivs[i].id = 'power-pellet';
         }
@@ -74,24 +76,28 @@ function control(e) {
     switch(e.code) {
         case 'ArrowDown':
             if (!gridDivs[pacmanCurrentIndex + width].classList.contains('wall') && 
+                !gridDivs[pacmanCurrentIndex + width].classList.contains('ghost-lair') && 
                 pacmanCurrentIndex + width < width *  width ) {
                 pacmanCurrentIndex += width;
             }
             break;
         case 'ArrowUp':
             if (!gridDivs[pacmanCurrentIndex - width].classList.contains('wall') &&
+                !gridDivs[pacmanCurrentIndex - width].classList.contains('ghost-lair') && 
                 pacmanCurrentIndex - width >= 0 ) {
                 pacmanCurrentIndex -= width;
             }
             break;
         case 'ArrowLeft':
             if (!gridDivs[pacmanCurrentIndex -1].classList.contains('wall') &&
+                !gridDivs[pacmanCurrentIndex -1].classList.contains('ghost-lair') && 
                 pacmanCurrentIndex % width !== 0) {
                 pacmanCurrentIndex -= 1;
             }
             break;
         case 'ArrowRight':
             if (!gridDivs[pacmanCurrentIndex +1].classList.contains('wall') &&
+                !gridDivs[pacmanCurrentIndex +1].classList.contains('ghost-lair') && 
                 pacmanCurrentIndex % width < width -1) {
                 pacmanCurrentIndex += 1;
             }
