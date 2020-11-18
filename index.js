@@ -116,7 +116,7 @@ function control(e) {
     pacDotEat()
     powerPelletEat()
 }
-document.addEventListener('keydown', control);
+document.addEventListener('keyup', control);
 
 //Checking if pacman index contains a pac-dots and add score and remove class
 function pacDotEat() {
@@ -206,7 +206,7 @@ function checkGameOver() {
                 clearInterval(ghost.timerId)
                 ghost.timerId = NaN;
             }
-            document.removeEventListener('keydown', control)
+            document.removeEventListener('keyup', control)
             document.querySelector("h3").textContent = `Game Over, Your final score was ${score}! Well done!`;
     }
 }
