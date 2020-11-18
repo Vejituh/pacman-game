@@ -187,5 +187,12 @@ function moveGhost(ghost) {
             if (ghost.isScared) {
                 gridDivs[ghost.currentIndex].classList.add('scared-ghost');
             }
+            if (ghost.isScared && gridDivs[ghost.currentIndex].id === 'pacman') {
+                gridDivs[ghost.currentIndex].classList.remove(ghost.className, 'ghost', 'scared-ghost')
+                ghost.currentIndex = ghost.startIndex;
+                score += 100;
+                scoreDisplay.textContent = score;
+                gridDivs[ghost.currentIndex].classList.add(ghost.className, 'ghost');
+            }
     }, ghost.speed)
 }
