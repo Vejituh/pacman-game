@@ -179,10 +179,13 @@ function moveGhost(ghost) {
         if (!gridDivs[ghost.currentIndex + direction].classList.contains('wall') &&
             !gridDivs[ghost.currentIndex + direction].classList.contains('ghost')) {
                 gridDivs[ghost.currentIndex].classList.remove(ghost.className)
-                gridDivs[ghost.currentIndex].classList.remove('ghost')
+                gridDivs[ghost.currentIndex].classList.remove('ghost', 'scared-ghost')
                 ghost.currentIndex += direction;
                 gridDivs[ghost.currentIndex].classList.add(ghost.className)
                 gridDivs[ghost.currentIndex].classList.add('ghost')
             } else direction = directions[Math.floor(Math.random() * directions.length)]
+            if (ghost.isScared) {
+                gridDivs[ghost.currentIndex].classList.add('scared-ghost');
+            }
     }, ghost.speed)
 }
