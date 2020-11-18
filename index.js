@@ -194,5 +194,19 @@ function moveGhost(ghost) {
                 scoreDisplay.textContent = score;
                 gridDivs[ghost.currentIndex].classList.add(ghost.className, 'ghost');
             }
+            checkGameOver()
     }, ghost.speed)
+}
+
+//check for game over
+function checkGameOver() {
+    if (gridDivs[pacmanCurrentIndex].classList.contains('ghost') && 
+        !gridDivs[pacmanCurrentIndex].classList.contains('scared-ghost')) {
+            for(const ghost of ghosts) {
+                clearInterval(ghost.timerId)
+                ghost.timerId = NaN;
+            }
+            document.removeEventListener('keydown', control)
+            document.querySelector("h3").textContent = `Game Over, Your final score was ${score}! Well done!`;
+    }
 }

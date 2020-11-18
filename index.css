@@ -102,6 +102,10 @@ html,body {
         margin: 2.25px;
         border: none;
     }
+
+    .blinky, .pinky, .inky, .clyde {
+        border: none;
+    }
 }
 
 @media (min-width: 1024px) and (min-height: 1122px) {
@@ -133,6 +137,10 @@ html,body {
         margin: 3.375px;
         border: none;
     }
+
+    .blinky, .pinky, .inky, .clyde {
+        border: none;
+    }
 }
 
 @media (min-width: 2560px) and (min-height: 1122px){
@@ -162,6 +170,9 @@ html,body {
         width: 40.5px;
         height: 40.5px;
         margin: 5.0625px;
+        border: none;
+    }
+    .blinky, .pinky, .inky, .clyde {
         border: none;
     }
 }
