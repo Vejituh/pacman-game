@@ -215,12 +215,18 @@ function checkGameOver() {
 
 //check for Win
 function checkForWin() {
-    if (score >= 274) {
-        for(const ghost of ghosts) {
-            clearInterval(ghost.timerId)
-            ghost.timerId = NaN;
+    let pacDotLeft = 0;
+    for (const div of gridDivs) {
+        if(div.classList.contains('pac-dot')) {
+            pacDotLeft ++;
         }
-        document.removeEventListener('keyup', control)
-        document.querySelector("h3").textContent = `You did it, Your managed to get ${score}! Well done!`;
     }
+        if (pacDotLeft === 0) {
+            for(const ghost of ghosts) {
+                clearInterval(ghost.timerId)
+                ghost.timerId = NaN;
+            }
+            document.removeEventListener('keyup', control)
+            document.querySelector("h3").textContent = `You did it, Your managed to get ${score}! Well done!`;
+        }
 }
