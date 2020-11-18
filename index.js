@@ -115,6 +115,8 @@ function control(e) {
     gridDivs[pacmanCurrentIndex].id = 'pacman'
     pacDotEat()
     powerPelletEat()
+    checkGameOver()
+    checkForWin()
 }
 document.addEventListener('keyup', control);
 
@@ -154,10 +156,10 @@ class Ghost {
 }
 
 const ghosts = [
-    new Ghost ('blinky', 348, 250),
-    new Ghost ('pinky', 376, 400),
-    new Ghost ('inky', 351, 300),
-    new Ghost ('clyde', 379, 500)
+    new Ghost ('blinky', 348, 500),
+    new Ghost ('pinky', 376, 800),
+    new Ghost ('inky', 351, 600),
+    new Ghost ('clyde', 379, 1000)
 ]
 
 //Draw ghost onto grid
@@ -208,5 +210,17 @@ function checkGameOver() {
             }
             document.removeEventListener('keyup', control)
             document.querySelector("h3").textContent = `Game Over, Your final score was ${score}! Well done!`;
+    }
+}
+
+//check for Win
+function checkForWin() {
+    if (score >= 274) {
+        for(const ghost of ghosts) {
+            clearInterval(ghost.timerId)
+            ghost.timerId = NaN;
+        }
+        document.removeEventListener('keyup', control)
+        document.querySelector("h3").textContent = `You did it, Your managed to get ${score}! Well done!`;
     }
 }
